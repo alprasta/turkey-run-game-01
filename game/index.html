@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giblet's Great Escape — a Thanksgiving turkey run</title>
+<meta name="description" content="Giblet the turkey flees Farmer Bramwell across the farmyard, through the farmhouse kitchen and into the pine forest — jump the fences, clear the oven, dodge the carving knife.">
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #241608;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #game {
+    width: min(100vw, calc(100vh * 16 / 9));
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+    touch-action: none;
+    cursor: pointer;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+  }
+  /* Read aloud, never shown: the status line screen readers announce. */
+  #status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+<canvas id="game" width="1280" height="720" aria-label="Giblet's Great Escape: a turkey runs from Farmer Bramwell across the farmyard, through the kitchen and into the forest. Jump with Space or click, dash with Shift, duck with Down."></canvas>
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
